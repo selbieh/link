@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "corsheaders",
     'rest_framework',
     "rest_framework_swagger",
+    'django_filters',
     #installed app
     'user_task',
     'rest_framework.authtoken'
@@ -68,7 +69,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
 
-    ]
+    ],
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 }
 
 ROOT_URLCONF = 'task.urls'
